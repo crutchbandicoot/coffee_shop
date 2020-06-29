@@ -34,5 +34,17 @@ router.post('/:id', (req, res) =>{
     });
 });
 
+router.delete('/:id', (req,res) =>{
+    const id = req.params.id;
+    res.status(200).json({
+        message: `Product ID: ${id} has been deleted from the shopping cart`
+    });
+});
 
+router.delete('/', (req,res) =>{
+    const id = req.params.id;
+    res.status(200).json({
+        message: 'Your shopping cart is now empty'
+    });
+});
 module.exports = router;
