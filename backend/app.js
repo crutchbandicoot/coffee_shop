@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
 
+
 const app = express();
+
 
 //Database connection
 mongoose.connect(
@@ -26,6 +28,7 @@ app.use(bodyParser.json());
 //Routes
 const productRoute = require("./api/routes/products");
 const orderRoute = require("./api/routes/orders");
+const userRoute = require('./api/routes/users');
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -35,5 +38,6 @@ app.get("/", (req, res) => {
 
 app.use("/products", productRoute);
 app.use("/orders", orderRoute);
+app.use('/users', userRoute);
 
 module.exports = app;

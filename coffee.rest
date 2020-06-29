@@ -1,0 +1,60 @@
+# Products routes
+ GET http://localhost:3000/products
+
+###
+
+
+ GET http://localhost:3000/products/C-hzf4qfA
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "productName": "Esspresso",
+    "productPrice": "R12.99"
+}
+
+###
+
+# Deleting from the inventory
+ DELETE  http://localhost:3000/products/13
+Content-Type: application/json
+
+
+
+########################################################
+
+# Orders
+
+ POST http://localhost:3000/orders/12
+Content-Type: application/json
+
+ {
+     "orderedProduct": "Esspresso"
+}
+
+###
+
+# Deleting from the inventory
+ DELETE  http://localhost:3000/orders/12
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:3000/orders/
+
+
+##########################################################
+
+# User and Paymnet Routes
+
+POST  http://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "firstName": "Tshepo",
+    "lastName": "Setshedi",
+    "password": "PassWord12345"
+}
